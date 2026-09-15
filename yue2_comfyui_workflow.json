@@ -1,0 +1,1138 @@
+{
+  "id": "9bb514c4-2d77-4cac-82f3-fb5dca2632d5",
+  "revision": 0,
+  "last_node_id": 32,
+  "last_link_id": 54,
+  "nodes": [
+    {
+      "id": 17,
+      "type": "VAEDecodeAudioTiled",
+      "pos": [
+        1791.0643953860126,
+        -269.69175821423295
+      ],
+      "size": [
+        270.9375,
+        110
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 22
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "AUDIO",
+          "type": "AUDIO",
+          "links": []
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.35.0",
+        "Node name for S&R": "VAEDecodeAudioTiled"
+      },
+      "widgets_values": [
+        1920,
+        128
+      ],
+      "widgets_values_named": {
+        "tile_size": 1920,
+        "overlap": 128
+      }
+    },
+    {
+      "id": 19,
+      "type": "SheetSage2AudioToABC",
+      "pos": [
+        73.30658311271961,
+        448.11611046551616
+      ],
+      "size": [
+        272.171875,
+        82
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio_encoder",
+          "type": "AUDIO_ENCODER",
+          "link": 25
+        },
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 45
+        }
+      ],
+      "outputs": [
+        {
+          "name": "abc",
+          "shape": 6,
+          "type": "STRING",
+          "links": [
+            27
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.35.0",
+        "Node name for S&R": "SheetSage2AudioToABC"
+      },
+      "widgets_values": [
+        "melody"
+      ],
+      "widgets_values_named": {
+        "mode": "melody"
+      }
+    },
+    {
+      "id": 9,
+      "type": "VAEDecodeAudio",
+      "pos": [
+        1779.1287727448357,
+        -96.82673100683641
+      ],
+      "size": [
+        280.59375,
+        54
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 9
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 48
+        }
+      ],
+      "outputs": [
+        {
+          "name": "AUDIO",
+          "type": "AUDIO",
+          "links": [
+            47
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.35.0",
+        "Node name for S&R": "VAEDecodeAudio"
+      }
+    },
+    {
+      "id": 25,
+      "type": "Note",
+      "pos": [
+        2080.847815587228,
+        -245.2745508226934
+      ],
+      "size": [
+        210,
+        88
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "If your GPU has enough vram use the regular VAE decode for faster decoding."
+      ],
+      "widgets_values_named": {
+        "text": "If your GPU has enough vram use the regular VAE decode for faster decoding."
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 5,
+      "type": "EmptyYuE2LatentAudio",
+      "pos": [
+        1392.1211667280982,
+        52.005213198986844
+      ],
+      "size": [
+        290,
+        100
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "seconds",
+          "type": "FLOAT",
+          "widget": {
+            "name": "seconds"
+          },
+          "link": 36
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            8
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.35.0",
+        "Node name for S&R": "EmptyYuE2LatentAudio"
+      },
+      "widgets_values": [
+        120,
+        1
+      ],
+      "widgets_values_named": {
+        "seconds": 120,
+        "batch_size": 1
+      }
+    },
+    {
+      "id": 21,
+      "type": "PreviewAny",
+      "pos": [
+        408.56913475502864,
+        447.40737322756934
+      ],
+      "size": [
+        389.91486664162574,
+        326.4428296393721
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 27
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            51
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.35.0",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [],
+      "widgets_values_named": {}
+    },
+    {
+      "id": 15,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        445.1419787580827,
+        -251.32755913849047
+      ],
+      "size": [
+        414.93749999999955,
+        109.49999999999994
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            18
+          ]
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            30,
+            38
+          ]
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            48
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.35.0",
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "yue2_3b_bf16.safetensors"
+      ],
+      "widgets_values_named": {
+        "ckpt_name": "yue2_3b_bf16.safetensors"
+      }
+    },
+    {
+      "id": 14,
+      "type": "PreviewAny",
+      "pos": [
+        1068.9999915696503,
+        257.51893093698357
+      ],
+      "size": [
+        442.6918626161473,
+        482.0364917666524
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 50
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            54
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.35.0",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [],
+      "widgets_values_named": {}
+    },
+    {
+      "id": 28,
+      "type": "Any Switch (rgthree)",
+      "pos": [
+        826.3347458523273,
+        362.5226674249143
+      ],
+      "size": [
+        213.0229088842258,
+        106
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "dir": 3,
+          "name": "any_01",
+          "type": "STRING",
+          "link": 49
+        },
+        {
+          "dir": 3,
+          "name": "any_02",
+          "type": "STRING",
+          "link": 51
+        },
+        {
+          "dir": 3,
+          "name": "any_03",
+          "type": "STRING",
+          "link": null
+        },
+        {
+          "dir": 3,
+          "name": "any_04",
+          "type": "STRING",
+          "link": null
+        },
+        {
+          "dir": 3,
+          "name": "any_05",
+          "type": "STRING",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "dir": 4,
+          "label": "STRING",
+          "name": "*",
+          "shape": 3,
+          "type": "STRING",
+          "links": [
+            50
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "rgthree-comfy",
+        "ver": "8ff50e4521881eca1fe26aec9615fc9362474931"
+      }
+    },
+    {
+      "id": 8,
+      "type": "KSampler",
+      "pos": [
+        1389.6612626299757,
+        -275.8096565089961
+      ],
+      "size": [
+        330,
+        270
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 18
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 35
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 37
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 8
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            9,
+            22
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.35.0",
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        7,
+        "fixed",
+        32,
+        1,
+        "dpm_2",
+        "sgm_uniform",
+        1
+      ],
+      "widgets_values_named": {
+        "seed": 7,
+        "control_after_generate": "fixed",
+        "steps": 32,
+        "cfg": 1,
+        "sampler_name": "dpm_2",
+        "scheduler": "sgm_uniform",
+        "denoise": 1
+      }
+    },
+    {
+      "id": 18,
+      "type": "AudioEncoderLoader",
+      "pos": [
+        -265.86374143119247,
+        448.0844067872339
+      ],
+      "size": [
+        284.953125,
+        62
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "AUDIO_ENCODER",
+          "type": "AUDIO_ENCODER",
+          "links": [
+            25
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.35.0",
+        "Node name for S&R": "AudioEncoderLoader"
+      },
+      "widgets_values": [
+        "sheetsage2_bf16.safetensors"
+      ],
+      "widgets_values_named": {
+        "audio_encoder_name": "sheetsage2_bf16.safetensors"
+      }
+    },
+    {
+      "id": 27,
+      "type": "VHS_LoadAudio",
+      "pos": [
+        -248.52736987290749,
+        592.4153111395179
+      ],
+      "size": [
+        614.6375525612286,
+        180
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": [
+            45
+          ]
+        },
+        {
+          "name": "duration",
+          "type": "FLOAT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-workflow-encrypt",
+        "ver": "449839959f0153fb8a57211a9364c55163935ca9",
+        "Node name for S&R": "VHS_LoadAudio",
+        "aux_id": "kosinkadink/ComfyUI-VideoHelperSuite"
+      },
+      "widgets_values": {
+        "audio_file": "J:\\work videos\\1.mp3",
+        "seek_seconds": 0,
+        "duration": 0,
+        "audiopreview": {
+          "params": {
+            "start_time": 0,
+            "duration": 0,
+            "filename": "J:\\work videos\\1.mp3",
+            "type": "path"
+          }
+        }
+      },
+      "widgets_values_named": {
+        "audio_file": "J:\\work videos\\1.mp3",
+        "seek_seconds": 0,
+        "duration": 0,
+        "audiopreview": {
+          "params": {
+            "start_time": 0,
+            "duration": 0,
+            "filename": "J:\\work videos\\1.mp3",
+            "type": "path"
+          }
+        }
+      }
+    },
+    {
+      "id": 22,
+      "type": "YuE2GenerateMusic",
+      "pos": [
+        915.9732859949006,
+        -270.13067461034456
+      ],
+      "size": [
+        427.4999999999998,
+        408
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "showAdvanced": false,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 30
+        },
+        {
+          "name": "style",
+          "type": "STRING",
+          "widget": {
+            "name": "style"
+          },
+          "link": 31
+        },
+        {
+          "name": "lyrics",
+          "type": "STRING",
+          "widget": {
+            "name": "lyrics"
+          },
+          "link": 32
+        },
+        {
+          "name": "abc",
+          "type": "STRING",
+          "widget": {
+            "name": "abc"
+          },
+          "link": 54
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            35,
+            37
+          ]
+        },
+        {
+          "name": "seconds",
+          "type": "FLOAT",
+          "links": [
+            36
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.35.0",
+        "Node name for S&R": "YuE2GenerateMusic"
+      },
+      "widgets_values": [
+        "Epic cinematic  epic taiko music, battle music fused with symphonic orchestral music and ancient Roman military marches.\n\nTempo: begin around 72 BPM with a slow, deliberate military march. Gradually increase rhythmic intensity toward the chorus. The final section should slow down naturally and become solemn.\n\nInstrumentation: deep war drums, Roman-style marching percussion, military snare, powerful kick drums, low cellos and violas, soaring violins, French horns, trumpets, trombones, huge orchestral brass fanfares, cymbal crashes and epic power-metal rhythm guitars. Combine orchestral strings and brass with aggressive distorted electric guitars during the major climaxes.\n\nVocals: powerful male lead singer with a commanding, heroic and slightly gritty opera character. Verses should be intimate and narrative, gradually increasing in intensity. The pre-chorus should sound increasingly urgent. The chorus must explode into a huge heroic vocal performance with strong chest voice and layered male backing vocals.\n\nLatin phrases should be pronounced clearly and dramatically, treating the Latin passages as ceremonial Roman declarations rather than conversational singing.\n\nIntro: sparse deep war drums, low strings and distant brass. The vocal declaration “Ave, Roma!” should sound ceremonial and imposing. Build anticipation before the verse.\n\nVerse: restrained military march with low strings and rhythm  epic taiko music, battle music. Narrative male vocal, clear and authoritative, telling the story of exile, war, hardship and destiny.\n\nPre-Chorus: gradually increase orchestral strings, brass and percussion. Vocal becomes more intense and urgent. The final line should feel like an army preparing to advance.\n\nChorus: enormous symphonic power-metal explosion. Massive drums, driving electric guitars, soaring strings, triumphant brass and powerful male lead vocals. “ARMA VIRUMQUE!” must be the main musical hook and should sound like a battle cry. Layered male choir harmonies reinforce “Arma virumque cano!” and “March, soldier, march!”\n\nPost-Chorus: highly rhythmic Roman military call-and-response. The Centurion sings the commands and the Legion answers as a large male chorus. Make “Roma!”, “Imperium!” and “Pietas!” short, powerful and percussive. The Legion responses should sound like hundreds of soldiers shouting together.\n\nBridge: dramatically pull back the drums and guitars. Dark orchestral strings and low brass dominate. Vocal becomes deeper, reflective and solemn, questioning destiny, duty and the will of the gods. Gradually rebuild tension toward the instrumental section.\n\nInstrumental / Solo: no vocals.  epic drum music, battle music, solo intertwined with soaring orchestral strings and heroic brass. Military drums drive the section. The arrangement reaches its highest rhythmic intensity before returning to the final vocal section.\n\nOutro: gradually remove the drums and guitars. Leave sustained strings, low brass and distant ceremonial drums. The vocal becomes slower, softer and deeply resonant. The final words “Rome... is born... today...” should feel like a solemn prophecy being fulfilled.\n\nOverall sound: epic Roman military opera through  epic taiko music, battle music aesthetic. Ancient, martial, heroic, tragic and triumphant. Strong contrast between intimate storytelling and gigantic battlefield choruses. Organic orchestral instruments, powerful distorted guitars, massive male choir and commanding lead vocals. The music should feel like an army marching toward the founding of Rome.\n",
+        "[intro]\n\nAve, Roma!\nStep by step, the fates take hold!\nPectus... ferrum... Roma!\n\n[verse]\n\nFrom Troy’s exiled shores, by destiny driven,\nJuno’s fierce wrath, the sea and land I’ve braved.\nBlood and sweat, each day a trial,\nWhile the city rising calls me still.\nMany wars endured, each burden borne,\nWhile he brought the gods to Latium’s shore.\nMultum ille et terris iactatus, et alto vi...\nThe road is long, but the march won’t cease.\n\n[pre-chorus]\n\nMuse, hear me! Tell why wrath descended,\nWhy heaven tested us, why fates extended?\nQuo numine laeso? Quid dolens, regina deum?\nThe ranks align! The column moves!\n\n[chorus]\n\nARMA VIRUMQUE! Sing the arms and the man!\nWho from the ashes raised a new land!\nFrom Lavinium’s coast to Latium’s plain,\nRome is born of iron, Rome is born of pain!\nArma virumque cano! March, soldier, march!\nThe fates guide our steps, fate’s unbroken march!\n\n[post-chorus]\n\nCenturion ! Roma!\nLegion ! Roma!\nCenturion ! Imperium!\nLegion ! Imperium!\nCenturion! Pietas!\nLegion! Pietas!\n\n\n\n[bridge]\n\nDo the gods envy the man who bows to duty?\nOr is it our own will that shapes the route?\nEvery tear, every scar, every wall raised high,\nIs the price of tomorrow beneath the sky.\nTantaene animis caelestibus irae?\nNo turning back. Only the front. Only the law.\n\n[outro]\n\nFrom Troy to Latium... the fates are fulfilled.\nFrom exile to homeland... the name is sealed.\nArma virumque... cano...\nRome... is born... today...\n\n[instrumental]\n",
+        "",
+        6846516,
+        "fixed",
+        "full",
+        300,
+        1,
+        0.95,
+        100,
+        1.2
+      ],
+      "widgets_values_named": {
+        "style": "Epic cinematic  epic taiko music, battle music fused with symphonic orchestral music and ancient Roman military marches.\n\nTempo: begin around 72 BPM with a slow, deliberate military march. Gradually increase rhythmic intensity toward the chorus. The final section should slow down naturally and become solemn.\n\nInstrumentation: deep war drums, Roman-style marching percussion, military snare, powerful kick drums, low cellos and violas, soaring violins, French horns, trumpets, trombones, huge orchestral brass fanfares, cymbal crashes and epic power-metal rhythm guitars. Combine orchestral strings and brass with aggressive distorted electric guitars during the major climaxes.\n\nVocals: powerful male lead singer with a commanding, heroic and slightly gritty opera character. Verses should be intimate and narrative, gradually increasing in intensity. The pre-chorus should sound increasingly urgent. The chorus must explode into a huge heroic vocal performance with strong chest voice and layered male backing vocals.\n\nLatin phrases should be pronounced clearly and dramatically, treating the Latin passages as ceremonial Roman declarations rather than conversational singing.\n\nIntro: sparse deep war drums, low strings and distant brass. The vocal declaration “Ave, Roma!” should sound ceremonial and imposing. Build anticipation before the verse.\n\nVerse: restrained military march with low strings and rhythm  epic taiko music, battle music. Narrative male vocal, clear and authoritative, telling the story of exile, war, hardship and destiny.\n\nPre-Chorus: gradually increase orchestral strings, brass and percussion. Vocal becomes more intense and urgent. The final line should feel like an army preparing to advance.\n\nChorus: enormous symphonic power-metal explosion. Massive drums, driving electric guitars, soaring strings, triumphant brass and powerful male lead vocals. “ARMA VIRUMQUE!” must be the main musical hook and should sound like a battle cry. Layered male choir harmonies reinforce “Arma virumque cano!” and “March, soldier, march!”\n\nPost-Chorus: highly rhythmic Roman military call-and-response. The Centurion sings the commands and the Legion answers as a large male chorus. Make “Roma!”, “Imperium!” and “Pietas!” short, powerful and percussive. The Legion responses should sound like hundreds of soldiers shouting together.\n\nBridge: dramatically pull back the drums and guitars. Dark orchestral strings and low brass dominate. Vocal becomes deeper, reflective and solemn, questioning destiny, duty and the will of the gods. Gradually rebuild tension toward the instrumental section.\n\nInstrumental / Solo: no vocals.  epic drum music, battle music, solo intertwined with soaring orchestral strings and heroic brass. Military drums drive the section. The arrangement reaches its highest rhythmic intensity before returning to the final vocal section.\n\nOutro: gradually remove the drums and guitars. Leave sustained strings, low brass and distant ceremonial drums. The vocal becomes slower, softer and deeply resonant. The final words “Rome... is born... today...” should feel like a solemn prophecy being fulfilled.\n\nOverall sound: epic Roman military opera through  epic taiko music, battle music aesthetic. Ancient, martial, heroic, tragic and triumphant. Strong contrast between intimate storytelling and gigantic battlefield choruses. Organic orchestral instruments, powerful distorted guitars, massive male choir and commanding lead vocals. The music should feel like an army marching toward the founding of Rome.\n",
+        "lyrics": "[intro]\n\nAve, Roma!\nStep by step, the fates take hold!\nPectus... ferrum... Roma!\n\n[verse]\n\nFrom Troy’s exiled shores, by destiny driven,\nJuno’s fierce wrath, the sea and land I’ve braved.\nBlood and sweat, each day a trial,\nWhile the city rising calls me still.\nMany wars endured, each burden borne,\nWhile he brought the gods to Latium’s shore.\nMultum ille et terris iactatus, et alto vi...\nThe road is long, but the march won’t cease.\n\n[pre-chorus]\n\nMuse, hear me! Tell why wrath descended,\nWhy heaven tested us, why fates extended?\nQuo numine laeso? Quid dolens, regina deum?\nThe ranks align! The column moves!\n\n[chorus]\n\nARMA VIRUMQUE! Sing the arms and the man!\nWho from the ashes raised a new land!\nFrom Lavinium’s coast to Latium’s plain,\nRome is born of iron, Rome is born of pain!\nArma virumque cano! March, soldier, march!\nThe fates guide our steps, fate’s unbroken march!\n\n[post-chorus]\n\nCenturion ! Roma!\nLegion ! Roma!\nCenturion ! Imperium!\nLegion ! Imperium!\nCenturion! Pietas!\nLegion! Pietas!\n\n\n\n[bridge]\n\nDo the gods envy the man who bows to duty?\nOr is it our own will that shapes the route?\nEvery tear, every scar, every wall raised high,\nIs the price of tomorrow beneath the sky.\nTantaene animis caelestibus irae?\nNo turning back. Only the front. Only the law.\n\n[outro]\n\nFrom Troy to Latium... the fates are fulfilled.\nFrom exile to homeland... the name is sealed.\nArma virumque... cano...\nRome... is born... today...\n\n[instrumental]\n",
+        "abc": "",
+        "seed": 6846516,
+        "control_after_generate": "fixed",
+        "mode": "full",
+        "max_duration": 300,
+        "temperature": 1,
+        "top_p": 0.95,
+        "top_k": 100,
+        "repetition_penalty": 1.2
+      }
+    },
+    {
+      "id": 23,
+      "type": "YuE2GenerateABC",
+      "pos": [
+        449.52295970221127,
+        -69.79330211115447
+      ],
+      "size": [
+        400,
+        358
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "showAdvanced": false,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 38
+        },
+        {
+          "name": "style",
+          "type": "STRING",
+          "widget": {
+            "name": "style"
+          },
+          "link": 39
+        },
+        {
+          "name": "lyrics",
+          "type": "STRING",
+          "widget": {
+            "name": "lyrics"
+          },
+          "link": 40
+        }
+      ],
+      "outputs": [
+        {
+          "name": "abc",
+          "type": "STRING",
+          "links": [
+            49
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.35.0",
+        "Node name for S&R": "YuE2GenerateABC"
+      },
+      "widgets_values": [
+        "Epic cinematic  epic taiko music, battle music fused with symphonic orchestral music and ancient Roman military marches.\n\nTempo: begin around 72 BPM with a slow, deliberate military march. Gradually increase rhythmic intensity toward the chorus. The final section should slow down naturally and become solemn.\n\nInstrumentation: deep war drums, Roman-style marching percussion, military snare, powerful kick drums, low cellos and violas, soaring violins, French horns, trumpets, trombones, huge orchestral brass fanfares, cymbal crashes and epic power-metal rhythm guitars. Combine orchestral strings and brass with aggressive distorted electric guitars during the major climaxes.\n\nVocals: powerful male lead singer with a commanding, heroic and slightly gritty opera character. Verses should be intimate and narrative, gradually increasing in intensity. The pre-chorus should sound increasingly urgent. The chorus must explode into a huge heroic vocal performance with strong chest voice and layered male backing vocals.\n\nLatin phrases should be pronounced clearly and dramatically, treating the Latin passages as ceremonial Roman declarations rather than conversational singing.\n\nIntro: sparse deep war drums, low strings and distant brass. The vocal declaration “Ave, Roma!” should sound ceremonial and imposing. Build anticipation before the verse.\n\nVerse: restrained military march with low strings and rhythm  epic taiko music, battle music. Narrative male vocal, clear and authoritative, telling the story of exile, war, hardship and destiny.\n\nPre-Chorus: gradually increase orchestral strings, brass and percussion. Vocal becomes more intense and urgent. The final line should feel like an army preparing to advance.\n\nChorus: enormous symphonic power-metal explosion. Massive drums, driving electric guitars, soaring strings, triumphant brass and powerful male lead vocals. “ARMA VIRUMQUE!” must be the main musical hook and should sound like a battle cry. Layered male choir harmonies reinforce “Arma virumque cano!” and “March, soldier, march!”\n\nPost-Chorus: highly rhythmic Roman military call-and-response. The Centurion sings the commands and the Legion answers as a large male chorus. Make “Roma!”, “Imperium!” and “Pietas!” short, powerful and percussive. The Legion responses should sound like hundreds of soldiers shouting together.\n\nBridge: dramatically pull back the drums and guitars. Dark orchestral strings and low brass dominate. Vocal becomes deeper, reflective and solemn, questioning destiny, duty and the will of the gods. Gradually rebuild tension toward the instrumental section.\n\nInstrumental / Solo: no vocals.  epic drum music, battle music, solo intertwined with soaring orchestral strings and heroic brass. Military drums drive the section. The arrangement reaches its highest rhythmic intensity before returning to the final vocal section.\n\nOutro: gradually remove the drums and guitars. Leave sustained strings, low brass and distant ceremonial drums. The vocal becomes slower, softer and deeply resonant. The final words “Rome... is born... today...” should feel like a solemn prophecy being fulfilled.\n\nOverall sound: epic Roman military opera through  epic taiko music, battle music aesthetic. Ancient, martial, heroic, tragic and triumphant. Strong contrast between intimate storytelling and gigantic battlefield choruses. Organic orchestral instruments, powerful distorted guitars, massive male choir and commanding lead vocals. The music should feel like an army marching toward the founding of Rome.\n",
+        "[intro]\n\nAve, Roma!\nStep by step, the fates take hold!\nPectus... ferrum... Roma!\n\n[verse]\n\nFrom Troy’s exiled shores, by destiny driven,\nJuno’s fierce wrath, the sea and land I’ve braved.\nBlood and sweat, each day a trial,\nWhile the city rising calls me still.\nMany wars endured, each burden borne,\nWhile he brought the gods to Latium’s shore.\nMultum ille et terris iactatus, et alto vi...\nThe road is long, but the march won’t cease.\n\n[pre-chorus]\n\nMuse, hear me! Tell why wrath descended,\nWhy heaven tested us, why fates extended?\nQuo numine laeso? Quid dolens, regina deum?\nThe ranks align! The column moves!\n\n[chorus]\n\nARMA VIRUMQUE! Sing the arms and the man!\nWho from the ashes raised a new land!\nFrom Lavinium’s coast to Latium’s plain,\nRome is born of iron, Rome is born of pain!\nArma virumque cano! March, soldier, march!\nThe fates guide our steps, fate’s unbroken march!\n\n[post-chorus]\n\nCenturion ! Roma!\nLegion ! Roma!\nCenturion ! Imperium!\nLegion ! Imperium!\nCenturion! Pietas!\nLegion! Pietas!\n\n\n\n[bridge]\n\nDo the gods envy the man who bows to duty?\nOr is it our own will that shapes the route?\nEvery tear, every scar, every wall raised high,\nIs the price of tomorrow beneath the sky.\nTantaene animis caelestibus irae?\nNo turning back. Only the front. Only the law.\n\n[outro]\n\nFrom Troy to Latium... the fates are fulfilled.\nFrom exile to homeland... the name is sealed.\nArma virumque... cano...\nRome... is born... today...\n\n[instrumental]\n",
+        65465465,
+        "fixed",
+        "full",
+        16384,
+        0.7,
+        0.9,
+        30,
+        1.005,
+        100
+      ],
+      "widgets_values_named": {
+        "style": "Epic cinematic  epic taiko music, battle music fused with symphonic orchestral music and ancient Roman military marches.\n\nTempo: begin around 72 BPM with a slow, deliberate military march. Gradually increase rhythmic intensity toward the chorus. The final section should slow down naturally and become solemn.\n\nInstrumentation: deep war drums, Roman-style marching percussion, military snare, powerful kick drums, low cellos and violas, soaring violins, French horns, trumpets, trombones, huge orchestral brass fanfares, cymbal crashes and epic power-metal rhythm guitars. Combine orchestral strings and brass with aggressive distorted electric guitars during the major climaxes.\n\nVocals: powerful male lead singer with a commanding, heroic and slightly gritty opera character. Verses should be intimate and narrative, gradually increasing in intensity. The pre-chorus should sound increasingly urgent. The chorus must explode into a huge heroic vocal performance with strong chest voice and layered male backing vocals.\n\nLatin phrases should be pronounced clearly and dramatically, treating the Latin passages as ceremonial Roman declarations rather than conversational singing.\n\nIntro: sparse deep war drums, low strings and distant brass. The vocal declaration “Ave, Roma!” should sound ceremonial and imposing. Build anticipation before the verse.\n\nVerse: restrained military march with low strings and rhythm  epic taiko music, battle music. Narrative male vocal, clear and authoritative, telling the story of exile, war, hardship and destiny.\n\nPre-Chorus: gradually increase orchestral strings, brass and percussion. Vocal becomes more intense and urgent. The final line should feel like an army preparing to advance.\n\nChorus: enormous symphonic power-metal explosion. Massive drums, driving electric guitars, soaring strings, triumphant brass and powerful male lead vocals. “ARMA VIRUMQUE!” must be the main musical hook and should sound like a battle cry. Layered male choir harmonies reinforce “Arma virumque cano!” and “March, soldier, march!”\n\nPost-Chorus: highly rhythmic Roman military call-and-response. The Centurion sings the commands and the Legion answers as a large male chorus. Make “Roma!”, “Imperium!” and “Pietas!” short, powerful and percussive. The Legion responses should sound like hundreds of soldiers shouting together.\n\nBridge: dramatically pull back the drums and guitars. Dark orchestral strings and low brass dominate. Vocal becomes deeper, reflective and solemn, questioning destiny, duty and the will of the gods. Gradually rebuild tension toward the instrumental section.\n\nInstrumental / Solo: no vocals.  epic drum music, battle music, solo intertwined with soaring orchestral strings and heroic brass. Military drums drive the section. The arrangement reaches its highest rhythmic intensity before returning to the final vocal section.\n\nOutro: gradually remove the drums and guitars. Leave sustained strings, low brass and distant ceremonial drums. The vocal becomes slower, softer and deeply resonant. The final words “Rome... is born... today...” should feel like a solemn prophecy being fulfilled.\n\nOverall sound: epic Roman military opera through  epic taiko music, battle music aesthetic. Ancient, martial, heroic, tragic and triumphant. Strong contrast between intimate storytelling and gigantic battlefield choruses. Organic orchestral instruments, powerful distorted guitars, massive male choir and commanding lead vocals. The music should feel like an army marching toward the founding of Rome.\n",
+        "lyrics": "[intro]\n\nAve, Roma!\nStep by step, the fates take hold!\nPectus... ferrum... Roma!\n\n[verse]\n\nFrom Troy’s exiled shores, by destiny driven,\nJuno’s fierce wrath, the sea and land I’ve braved.\nBlood and sweat, each day a trial,\nWhile the city rising calls me still.\nMany wars endured, each burden borne,\nWhile he brought the gods to Latium’s shore.\nMultum ille et terris iactatus, et alto vi...\nThe road is long, but the march won’t cease.\n\n[pre-chorus]\n\nMuse, hear me! Tell why wrath descended,\nWhy heaven tested us, why fates extended?\nQuo numine laeso? Quid dolens, regina deum?\nThe ranks align! The column moves!\n\n[chorus]\n\nARMA VIRUMQUE! Sing the arms and the man!\nWho from the ashes raised a new land!\nFrom Lavinium’s coast to Latium’s plain,\nRome is born of iron, Rome is born of pain!\nArma virumque cano! March, soldier, march!\nThe fates guide our steps, fate’s unbroken march!\n\n[post-chorus]\n\nCenturion ! Roma!\nLegion ! Roma!\nCenturion ! Imperium!\nLegion ! Imperium!\nCenturion! Pietas!\nLegion! Pietas!\n\n\n\n[bridge]\n\nDo the gods envy the man who bows to duty?\nOr is it our own will that shapes the route?\nEvery tear, every scar, every wall raised high,\nIs the price of tomorrow beneath the sky.\nTantaene animis caelestibus irae?\nNo turning back. Only the front. Only the law.\n\n[outro]\n\nFrom Troy to Latium... the fates are fulfilled.\nFrom exile to homeland... the name is sealed.\nArma virumque... cano...\nRome... is born... today...\n\n[instrumental]\n",
+        "seed": 65465465,
+        "control_after_generate": "fixed",
+        "mode": "full",
+        "max_abc_tokens": 16384,
+        "temperature": 0.7,
+        "top_p": 0.9,
+        "top_k": 30,
+        "repetition_penalty": 1.005,
+        "penalty_window": 100
+      }
+    },
+    {
+      "id": 12,
+      "type": "PrimitiveNode",
+      "pos": [
+        -118.837875558346,
+        -301.8666924093972
+      ],
+      "size": [
+        477.1434804539173,
+        205.06358089140505
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "widget": {
+            "name": "style"
+          },
+          "links": [
+            31,
+            39
+          ]
+        }
+      ],
+      "title": "style",
+      "properties": {
+        "Run widget replace on values": false
+      },
+      "widgets_values": [
+        "Epic cinematic  epic taiko music, battle music fused with symphonic orchestral music and ancient Roman military marches.\n\nTempo: begin around 72 BPM with a slow, deliberate military march. Gradually increase rhythmic intensity toward the chorus. The final section should slow down naturally and become solemn.\n\nInstrumentation: deep war drums, Roman-style marching percussion, military snare, powerful kick drums, low cellos and violas, soaring violins, French horns, trumpets, trombones, huge orchestral brass fanfares, cymbal crashes and epic power-metal rhythm guitars. Combine orchestral strings and brass with aggressive distorted electric guitars during the major climaxes.\n\nVocals: powerful male lead singer with a commanding, heroic and slightly gritty opera character. Verses should be intimate and narrative, gradually increasing in intensity. The pre-chorus should sound increasingly urgent. The chorus must explode into a huge heroic vocal performance with strong chest voice and layered male backing vocals.\n\nLatin phrases should be pronounced clearly and dramatically, treating the Latin passages as ceremonial Roman declarations rather than conversational singing.\n\nIntro: sparse deep war drums, low strings and distant brass. The vocal declaration “Ave, Roma!” should sound ceremonial and imposing. Build anticipation before the verse.\n\nVerse: restrained military march with low strings and rhythm  epic taiko music, battle music. Narrative male vocal, clear and authoritative, telling the story of exile, war, hardship and destiny.\n\nPre-Chorus: gradually increase orchestral strings, brass and percussion. Vocal becomes more intense and urgent. The final line should feel like an army preparing to advance.\n\nChorus: enormous symphonic power-metal explosion. Massive drums, driving electric guitars, soaring strings, triumphant brass and powerful male lead vocals. “ARMA VIRUMQUE!” must be the main musical hook and should sound like a battle cry. Layered male choir harmonies reinforce “Arma virumque cano!” and “March, soldier, march!”\n\nPost-Chorus: highly rhythmic Roman military call-and-response. The Centurion sings the commands and the Legion answers as a large male chorus. Make “Roma!”, “Imperium!” and “Pietas!” short, powerful and percussive. The Legion responses should sound like hundreds of soldiers shouting together.\n\nBridge: dramatically pull back the drums and guitars. Dark orchestral strings and low brass dominate. Vocal becomes deeper, reflective and solemn, questioning destiny, duty and the will of the gods. Gradually rebuild tension toward the instrumental section.\n\nInstrumental / Solo: no vocals.  epic drum music, battle music, solo intertwined with soaring orchestral strings and heroic brass. Military drums drive the section. The arrangement reaches its highest rhythmic intensity before returning to the final vocal section.\n\nOutro: gradually remove the drums and guitars. Leave sustained strings, low brass and distant ceremonial drums. The vocal becomes slower, softer and deeply resonant. The final words “Rome... is born... today...” should feel like a solemn prophecy being fulfilled.\n\nOverall sound: epic Roman military opera through  epic taiko music, battle music aesthetic. Ancient, martial, heroic, tragic and triumphant. Strong contrast between intimate storytelling and gigantic battlefield choruses. Organic orchestral instruments, powerful distorted guitars, massive male choir and commanding lead vocals. The music should feel like an army marching toward the founding of Rome.\n"
+      ],
+      "widgets_values_named": {
+        "value": "Epic cinematic  epic taiko music, battle music fused with symphonic orchestral music and ancient Roman military marches.\n\nTempo: begin around 72 BPM with a slow, deliberate military march. Gradually increase rhythmic intensity toward the chorus. The final section should slow down naturally and become solemn.\n\nInstrumentation: deep war drums, Roman-style marching percussion, military snare, powerful kick drums, low cellos and violas, soaring violins, French horns, trumpets, trombones, huge orchestral brass fanfares, cymbal crashes and epic power-metal rhythm guitars. Combine orchestral strings and brass with aggressive distorted electric guitars during the major climaxes.\n\nVocals: powerful male lead singer with a commanding, heroic and slightly gritty opera character. Verses should be intimate and narrative, gradually increasing in intensity. The pre-chorus should sound increasingly urgent. The chorus must explode into a huge heroic vocal performance with strong chest voice and layered male backing vocals.\n\nLatin phrases should be pronounced clearly and dramatically, treating the Latin passages as ceremonial Roman declarations rather than conversational singing.\n\nIntro: sparse deep war drums, low strings and distant brass. The vocal declaration “Ave, Roma!” should sound ceremonial and imposing. Build anticipation before the verse.\n\nVerse: restrained military march with low strings and rhythm  epic taiko music, battle music. Narrative male vocal, clear and authoritative, telling the story of exile, war, hardship and destiny.\n\nPre-Chorus: gradually increase orchestral strings, brass and percussion. Vocal becomes more intense and urgent. The final line should feel like an army preparing to advance.\n\nChorus: enormous symphonic power-metal explosion. Massive drums, driving electric guitars, soaring strings, triumphant brass and powerful male lead vocals. “ARMA VIRUMQUE!” must be the main musical hook and should sound like a battle cry. Layered male choir harmonies reinforce “Arma virumque cano!” and “March, soldier, march!”\n\nPost-Chorus: highly rhythmic Roman military call-and-response. The Centurion sings the commands and the Legion answers as a large male chorus. Make “Roma!”, “Imperium!” and “Pietas!” short, powerful and percussive. The Legion responses should sound like hundreds of soldiers shouting together.\n\nBridge: dramatically pull back the drums and guitars. Dark orchestral strings and low brass dominate. Vocal becomes deeper, reflective and solemn, questioning destiny, duty and the will of the gods. Gradually rebuild tension toward the instrumental section.\n\nInstrumental / Solo: no vocals.  epic drum music, battle music, solo intertwined with soaring orchestral strings and heroic brass. Military drums drive the section. The arrangement reaches its highest rhythmic intensity before returning to the final vocal section.\n\nOutro: gradually remove the drums and guitars. Leave sustained strings, low brass and distant ceremonial drums. The vocal becomes slower, softer and deeply resonant. The final words “Rome... is born... today...” should feel like a solemn prophecy being fulfilled.\n\nOverall sound: epic Roman military opera through  epic taiko music, battle music aesthetic. Ancient, martial, heroic, tragic and triumphant. Strong contrast between intimate storytelling and gigantic battlefield choruses. Organic orchestral instruments, powerful distorted guitars, massive male choir and commanding lead vocals. The music should feel like an army marching toward the founding of Rome.\n"
+      },
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 13,
+      "type": "PrimitiveNode",
+      "pos": [
+        -126.04082699717381,
+        -52.405790594237686
+      ],
+      "size": [
+        495.9375,
+        323.546875
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "widget": {
+            "name": "lyrics"
+          },
+          "links": [
+            32,
+            40
+          ]
+        }
+      ],
+      "title": "lyrics",
+      "properties": {
+        "Run widget replace on values": false
+      },
+      "widgets_values": [
+        "[intro]\n\nAve, Roma!\nStep by step, the fates take hold!\nPectus... ferrum... Roma!\n\n[verse]\n\nFrom Troy’s exiled shores, by destiny driven,\nJuno’s fierce wrath, the sea and land I’ve braved.\nBlood and sweat, each day a trial,\nWhile the city rising calls me still.\nMany wars endured, each burden borne,\nWhile he brought the gods to Latium’s shore.\nMultum ille et terris iactatus, et alto vi...\nThe road is long, but the march won’t cease.\n\n[pre-chorus]\n\nMuse, hear me! Tell why wrath descended,\nWhy heaven tested us, why fates extended?\nQuo numine laeso? Quid dolens, regina deum?\nThe ranks align! The column moves!\n\n[chorus]\n\nARMA VIRUMQUE! Sing the arms and the man!\nWho from the ashes raised a new land!\nFrom Lavinium’s coast to Latium’s plain,\nRome is born of iron, Rome is born of pain!\nArma virumque cano! March, soldier, march!\nThe fates guide our steps, fate’s unbroken march!\n\n[post-chorus]\n\nCenturion ! Roma!\nLegion ! Roma!\nCenturion ! Imperium!\nLegion ! Imperium!\nCenturion! Pietas!\nLegion! Pietas!\n\n\n\n[bridge]\n\nDo the gods envy the man who bows to duty?\nOr is it our own will that shapes the route?\nEvery tear, every scar, every wall raised high,\nIs the price of tomorrow beneath the sky.\nTantaene animis caelestibus irae?\nNo turning back. Only the front. Only the law.\n\n[outro]\n\nFrom Troy to Latium... the fates are fulfilled.\nFrom exile to homeland... the name is sealed.\nArma virumque... cano...\nRome... is born... today...\n\n[instrumental]\n"
+      ],
+      "widgets_values_named": {
+        "value": "[intro]\n\nAve, Roma!\nStep by step, the fates take hold!\nPectus... ferrum... Roma!\n\n[verse]\n\nFrom Troy’s exiled shores, by destiny driven,\nJuno’s fierce wrath, the sea and land I’ve braved.\nBlood and sweat, each day a trial,\nWhile the city rising calls me still.\nMany wars endured, each burden borne,\nWhile he brought the gods to Latium’s shore.\nMultum ille et terris iactatus, et alto vi...\nThe road is long, but the march won’t cease.\n\n[pre-chorus]\n\nMuse, hear me! Tell why wrath descended,\nWhy heaven tested us, why fates extended?\nQuo numine laeso? Quid dolens, regina deum?\nThe ranks align! The column moves!\n\n[chorus]\n\nARMA VIRUMQUE! Sing the arms and the man!\nWho from the ashes raised a new land!\nFrom Lavinium’s coast to Latium’s plain,\nRome is born of iron, Rome is born of pain!\nArma virumque cano! March, soldier, march!\nThe fates guide our steps, fate’s unbroken march!\n\n[post-chorus]\n\nCenturion ! Roma!\nLegion ! Roma!\nCenturion ! Imperium!\nLegion ! Imperium!\nCenturion! Pietas!\nLegion! Pietas!\n\n\n\n[bridge]\n\nDo the gods envy the man who bows to duty?\nOr is it our own will that shapes the route?\nEvery tear, every scar, every wall raised high,\nIs the price of tomorrow beneath the sky.\nTantaene animis caelestibus irae?\nNo turning back. Only the front. Only the law.\n\n[outro]\n\nFrom Troy to Latium... the fates are fulfilled.\nFrom exile to homeland... the name is sealed.\nArma virumque... cano...\nRome... is born... today...\n\n[instrumental]\n"
+      },
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 10,
+      "type": "SaveAudioAdvanced",
+      "pos": [
+        1785.8836827443467,
+        7.520720221459336
+      ],
+      "size": [
+        502.10937500000273,
+        160
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 47
+        }
+      ],
+      "outputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": []
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.35.0",
+        "Node name for S&R": "SaveAudioAdvanced"
+      },
+      "widgets_values": [
+        "audio/YuE2",
+        "mp3",
+        "V0"
+      ],
+      "widgets_values_named": {
+        "filename_prefix": "audio/YuE2",
+        "format": "mp3",
+        "format.quality": "V0"
+      }
+    }
+  ],
+  "links": [
+    [
+      8,
+      5,
+      0,
+      8,
+      3,
+      "LATENT"
+    ],
+    [
+      9,
+      8,
+      0,
+      9,
+      0,
+      "LATENT"
+    ],
+    [
+      18,
+      15,
+      0,
+      8,
+      0,
+      "MODEL"
+    ],
+    [
+      22,
+      8,
+      0,
+      17,
+      0,
+      "LATENT"
+    ],
+    [
+      25,
+      18,
+      0,
+      19,
+      0,
+      "AUDIO_ENCODER"
+    ],
+    [
+      27,
+      19,
+      0,
+      21,
+      0,
+      "STRING"
+    ],
+    [
+      30,
+      15,
+      1,
+      22,
+      0,
+      "CLIP"
+    ],
+    [
+      31,
+      12,
+      0,
+      22,
+      1,
+      "STRING"
+    ],
+    [
+      32,
+      13,
+      0,
+      22,
+      2,
+      "STRING"
+    ],
+    [
+      35,
+      22,
+      0,
+      8,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      36,
+      22,
+      1,
+      5,
+      0,
+      "FLOAT"
+    ],
+    [
+      37,
+      22,
+      0,
+      8,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      38,
+      15,
+      1,
+      23,
+      0,
+      "CLIP"
+    ],
+    [
+      39,
+      12,
+      0,
+      23,
+      1,
+      "STRING"
+    ],
+    [
+      40,
+      13,
+      0,
+      23,
+      2,
+      "STRING"
+    ],
+    [
+      45,
+      27,
+      0,
+      19,
+      1,
+      "AUDIO"
+    ],
+    [
+      47,
+      9,
+      0,
+      10,
+      0,
+      "AUDIO"
+    ],
+    [
+      48,
+      15,
+      2,
+      9,
+      1,
+      "VAE"
+    ],
+    [
+      49,
+      23,
+      0,
+      28,
+      0,
+      "STRING"
+    ],
+    [
+      50,
+      28,
+      0,
+      14,
+      0,
+      "STRING"
+    ],
+    [
+      51,
+      21,
+      0,
+      28,
+      1,
+      "STRING"
+    ],
+    [
+      54,
+      14,
+      0,
+      22,
+      3,
+      "STRING"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "title": "Audio Reference",
+      "bounding": [
+        -275.86374143119235,
+        377.40737322756934,
+        1092.6370424906866,
+        408.32111664162613
+      ],
+      "color": "#3f789e",
+      "flags": {}
+    },
+    {
+      "id": 2,
+      "title": "Sampling",
+      "bounding": [
+        905.9732859949006,
+        -340.13067461034456,
+        828.7027948738926,
+        523.2555351306073
+      ],
+      "color": "#3f789e",
+      "flags": {}
+    },
+    {
+      "id": 3,
+      "title": "Output",
+      "bounding": [
+        1769.1287727448357,
+        -339.6917582142331,
+        529.2143293953882,
+        523.7523322708128
+      ],
+      "color": "#3f789e",
+      "flags": {}
+    },
+    {
+      "id": 4,
+      "title": "Model",
+      "bounding": [
+        436.80172225783855,
+        -338.75558133239946,
+        434.93749999999955,
+        518.5364133643594
+      ],
+      "color": "#3f789e",
+      "flags": {}
+    },
+    {
+      "id": 5,
+      "title": "Inputs",
+      "bounding": [
+        -137.0714257873662,
+        -371.8666924093972,
+        515.9375,
+        656.6149155714106
+      ],
+      "color": "#3f789e",
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.546410764292065,
+      "offset": [
+        196.91952651890017,
+        487.61407065265325
+      ]
+    },
+    "frontendVersion": "1.51.10",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4,
+  "seed_widgets": {
+    "8": 0,
+    "22": 3,
+    "23": 2
+  }
+}
